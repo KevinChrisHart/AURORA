@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AURORA — Flow of Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0;
+    min-height:100%;
+    font-family:'Jost',sans-serif;
+    background:
+      radial-gradient(circle at 15% 8%, rgba(94,140,220,0.55), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(70,50,140,0.6), transparent 55%),
+      linear-gradient(160deg, #5f7fd6 0%, #8b6bc9 22%, #c073b0 42%, #e08a8f 60%, #eda07a 78%, #c98cae 100%);
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:56px 28px 72px;}
+  header{text-align:center;margin-bottom:8px;}
+  .eyebrow{font-size:13px;letter-spacing:0.14em;color:rgba(255,255,255,0.8);margin:0 0 14px;}
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(52px,12vw,84px);
+    line-height:0.95;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  .subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(16px,3.4vw,20px);
+    color:rgba(255,255,255,0.88);
+    margin:10px 0 0;
+  }
+  .meta{margin:22px auto 0;font-size:14px;color:rgba(255,255,255,0.85);}
+  .meta strong{color:#fff;}
+
+  .legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:30px 0 46px;font-size:12.5px;color:rgba(255,255,255,0.9);}
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .d-parish{background:#ffe08a;}
+  .d-mini{background:#9be8d8;}
+  .d-convent{background:#ffb3c1;}
+
+  .timeline{position:relative;padding-left:26px;}
+  .timeline::before{
+    content:"";position:absolute;left:4px;top:6px;bottom:6px;width:1px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.55), rgba(255,255,255,0.05));
+  }
+  .slot{position:relative;padding-bottom:26px;}
+  .slot::before{
+    content:"";position:absolute;left:-26px;top:6px;width:9px;height:9px;border-radius:50%;
+    background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,0.18);
+  }
+  .time{font-size:16px;letter-spacing:0.04em;color:rgba(255,255,255,0.82);margin-bottom:6px;}
+  .row{
+    display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+    padding:12px 16px;border-radius:10px;
+    background:rgba(255,255,255,0.09);
+    border:1px solid rgba(255,255,255,0.14);
+    margin-bottom:8px;
+  }
+  .row:last-child{margin-bottom:0;}
+  .ev{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;}
+  .loc{font-size:14px;letter-spacing:0.03em;color:rgba(255,255,255,0.85);white-space:nowrap;display:flex;align-items:center;gap:6px;}
+
+  footer{text-align:center;margin-top:54px;font-size:12.5px;color:rgba(255,255,255,0.75);}
+
+  @media (max-width:480px){
+    .row{flex-direction:column;align-items:flex-start;gap:4px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Holy Ghost Church Youth — Richards Town, Bengaluru</p>
+    <h1>AURORA</h1>
+    <p class="subtitle">the dawn of salvation — flow of events</p>
+    <p class="meta">Sunday, <strong>27th September 2026</strong> · 8:00 a.m. onwards</p>
+  </header>
+
+  <div class="legend">
+    <span><i class="dot d-parish"></i>Parish Hall</span>
+    <span><i class="dot d-mini"></i>Mini Hall / Outside</span>
+    <span><i class="dot d-convent"></i>Servite Convent</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="slot"><div class="time">7:30 – 8:30 am</div>
+      <div class="row"><span class="ev">Registration</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">8:30 – 9:30 am</div>
+      <div class="row"><span class="ev">Mass</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">9:30 – 10:00 am</div>
+      <div class="row"><span class="ev">Inauguration</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">10:00 am – 12:30 pm</div>
+      <div class="row"><span class="ev">Photography</span><span class="loc"><i class="dot d-convent"></i>Servite Convent</span></div>
+      <div class="row"><span class="ev">Short Film</span><span class="loc"><i class="dot d-convent"></i>Servite Convent</span></div>
+    </div>
+
+    <div class="slot"><div class="time">10:15 – 10:45 am</div>
+      <div class="row"><span class="ev">Improv</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">Collage</span><span class="loc"><i class="dot d-mini"></i>Mini Hall/Outside</span></div>
+    </div>
+
+    <div class="slot"><div class="time">10:50 – 11:05 am</div>
+      <div class="row"><span class="ev">Mime</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">Bible Verse Calligraphy</span><span class="loc"><i class="dot d-mini"></i>Mini Hall/Outside</span></div>
+      <div class="row"><span class="ev">Treasure Hunt (onwards)</span><span class="loc"><i class="dot d-mini"></i>Mini Hall/Outside</span></div>
+    </div>
+
+    <div class="slot"><div class="time">11:10 – 11:30 am</div>
+      <div class="row"><span class="ev">Mad Ads</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">11:35 am – 12:00 pm</div>
+      <div class="row"><span class="ev">Beat Boxing</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">Mini Canvas Painting</span><span class="loc"><i class="dot d-mini"></i>Mini Hall/Outside</span></div>
+    </div>
+
+    <div class="slot"><div class="time">12:05 – 1:00 pm</div>
+      <div class="row"><span class="ev">Solo Instrument</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">WOW Project</span><span class="loc"><i class="dot d-mini"></i>Mini Hall/Outside</span></div>
+    </div>
+
+    <div class="slot"><div class="time">1:15 – 1:45 pm</div>
+      <div class="row"><span class="ev">Lunch</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">1:50 – 2:25 pm</div>
+      <div class="row"><span class="ev">Walk the Bible</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">2:30 – 3:45 pm</div>
+      <div class="row"><span class="ev">Solo Singing</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">Group Singing</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">3:50 – 5:00 pm</div>
+      <div class="row"><span class="ev">Solo Dance</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+      <div class="row"><span class="ev">Group Dance</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+    <div class="slot"><div class="time">5:00 pm onwards</div>
+      <div class="row"><span class="ev">Prize Distribution</span><span class="loc"><i class="dot d-parish"></i>Parish Hall</span></div>
+    </div>
+
+  </div>
+
+  <footer>Holy Ghost Church Youth</footer>
+</div>
+</body>
+</html>
